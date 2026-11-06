@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="REDCO B.V. — data-installaties, bouw, installatietechniek en vakmensen.">
+  <title>REDCO BV — Data infrastructuur die blijft bewegen</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="webgl.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="REDCO BV home"><span class="brand-mark">R</span><span>REDCO <i>BV</i></span></a>
+    <nav aria-label="Hoofdnavigatie">
+      <a href="#diensten">Diensten</a><a href="#werkwijze">Werkwijze</a><a href="#projecten">Projecten</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="top-cta" href="#contact">Bespreek uw project <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> Bouw · Installatietechniek · Data</p>
+        <h1 id="hero-title">De infrastructuur<br><em>achter morgen.</em></h1>
+        <p class="hero-intro">REDCO brengt ideeën en realisatie samen. Van glasvezel en datanetwerken tot renovatie, elektra en de juiste vakmensen op locatie.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#diensten">Verken onze diensten <span>↓</span></a><a class="text-link" href="#contact">Neem contact op <span>↗</span></a></div>
+        <div class="hero-meta"><span>Rijswijk <small>basis</small></span><span>Landelijk inzetbaar <small>bereik</small></span><span>Van plan tot oplevering <small>proces</small></span></div>
+      </div>
+
+      <div class="datacenter-shell" aria-label="Interactief datacenter. Scroll om door de ruimte te bewegen en selecteer een serverkast.">
+        <div class="scene-hud"><span>S.00 / DATA CENTER</span><span id="distanceReadout">CAM 01 — OVERVIEW</span><span id="assetStatus" aria-live="polite">REAL-TIME 3D ASSETS / laden…</span></div>
+        <div class="scene-instruction"><span class="mouse-icon">↕</span><span>Scroll door het datacenter<br><b>Klik op een serverkast</b></span></div>
+        <canvas id="threeCanvas" aria-hidden="true"></canvas>
+        <div class="world" id="world">
+          <div class="ceiling"></div>
+          <div class="back-wall"></div>
+          <div class="floor"><span>REDCO BV</span></div>
+          <div class="aisle-line aisle-one"></div><div class="aisle-line aisle-two"></div><div class="aisle-line aisle-three"></div>
+          <div class="cable-run cable-a"></div><div class="cable-run cable-b"></div>
+          <div class="rack rack-a" data-rack="data" style="--z: 0"><button class="rack-hit" aria-label="Open Data en telecommunicatie serverkast"><span class="rack-label">DATA / 01</span><span class="rack-body"><i></i><i></i><i></i><i></i><b class="rack-door">◫</b></span></button></div>
+          <div class="rack rack-b" data-rack="power" style="--z: -260px"><button class="rack-hit" aria-label="Open Elektra en continuïteit serverkast"><span class="rack-label">POWER / 02</span><span class="rack-body"><i></i><i></i><i></i><i></i><b class="rack-door">◫</b></span></button></div>
+          <div class="rack rack-c" data-rack="security" style="--z: -520px"><button class="rack-hit" aria-label="Open Beveiliging en monitoring serverkast"><span class="rack-label">SECURE / 03</span><span class="rack-body"><i></i><i></i><i></i><i></i><b class="rack-door">◫</b></span></button></div>
+          <div class="rack rack-d" data-rack="build" style="--z: -780px"><button class="rack-hit" aria-label="Open Bouw en renovatie serverkast"><span class="rack-label">BUILD / 04</span><span class="rack-body"><i></i><i></i><i></i><i></i><b class="rack-door">◫</b></span></button></div>
+          <div class="rack rack-e" data-rack="people" style="--z: -1040px"><button class="rack-hit" aria-label="Open Vakmensen op locatie serverkast"><span class="rack-label">PEOPLE / 05</span><span class="rack-body"><i></i><i></i><i></i><i></i><b class="rack-door">◫</b></span></button></div>
+          <div class="data-pulse pulse-one"></div><div class="data-pulse pulse-two"></div><div class="data-pulse pulse-three"></div>
+        </div>
+        <div class="rack-panel" id="rackPanel" aria-live="polite" aria-hidden="true">
+          <button class="panel-close" id="panelClose" aria-label="Sluit rackinformatie">×</button>
+          <p class="panel-kicker" id="panelKicker">RACK / 01</p><h2 id="panelTitle">Data &amp; telecommunicatie</h2><p id="panelText"></p>
+          <a class="button button-primary" href="#diensten" id="panelLink">Bekijk dienst <span>↓</span></a>
+          <p class="panel-return">ESC / klik buiten het paneel om terug te keren naar overzicht</p>
+        </div>
+        <div class="scene-index"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="section services" id="diensten"><div class="section-label">S.01 / DIENSTEN</div><div class="section-heading"><p class="eyebrow">Eén aanspreekpunt voor complexe techniek</p><h2>Van verbinding<br><em>tot uitvoering.</em></h2></div>
+      <div class="service-grid"><article class="service-card featured"><span class="card-num">01</span><div><p class="card-kicker">DATA &amp; TELECOMMUNICATIE</p><h3>Infrastructuur die je niet ziet, maar wel voelt.</h3><p>Glasvezel, datanetwerken en telecommunicatie zorgvuldig aangelegd, getest en gedocumenteerd.</p><a href="#contact" class="card-link">Bespreek een installatie <span>↗</span></a></div></article><article class="service-card"><span class="card-num">02</span><div><p class="card-kicker">BOUW &amp; RENOVATIE</p><h3>Van eerste plan tot oplevering.</h3><p>Planning, bouwtechniek, interieurontwerp en uitvoering voor gebouwen die door kunnen.</p><a href="#contact" class="card-link">Start een project <span>↗</span></a></div></article><article class="service-card"><span class="card-num">03</span><div><p class="card-kicker">ELEKTRA &amp; BEVEILIGING</p><h3>Continuïteit als uitgangspunt.</h3><p>Elektra, noodstroom, brandbeveiliging, beveiliging en domotica met aandacht voor elk detail.</p><a href="#contact" class="card-link">Bekijk mogelijkheden <span>↗</span></a></div></article></div>
+    </section>
+
+    <section class="section process" id="werkwijze"><div class="section-label">S.02 / WERKWIJZE</div><div class="section-heading split"><div><p class="eyebrow">Vier stappen, één helder proces</p><h2>Techniek met<br><em>richting.</em></h2></div><p>Elk project begint met luisteren. Daarna brengen we ontwerp, mensen en uitvoering samen in één overzichtelijk traject.</p></div><div class="process-list"><div><span>01</span><h3>Inventariseren</h3><p>We brengen de vraag, locatie en randvoorwaarden scherp in beeld.</p></div><div><span>02</span><h3>Ontwerpen &amp; plannen</h3><p>Een uitvoerbaar plan met heldere keuzes, fasering en aanspreekpunten.</p></div><div><span>03</span><h3>Realiseren</h3><p>Onze vakmensen bouwen, installeren en stemmen disciplines op elkaar af.</p></div><div><span>04</span><h3>Controleren &amp; opleveren</h3><p>We testen, documenteren en leveren zorgvuldig op.</p></div></div></section>
+
+    <section class="section projects" id="projecten"><div class="section-label">S.03 / PROJECTEN</div><div class="section-heading"><p class="eyebrow">Gebouwd voor gebruik</p><h2>Projecten die<br><em>blijven werken.</em></h2></div><div class="project-rail"><article><span>01 / DATA</span><h3>Amerikaanse ambassade</h3><p>Installatietechniek en data-infrastructuur in een omgeving waar precisie telt.</p></article><article><span>02 / BOUW</span><h3>Leemanstoren</h3><p>Een complexe werkomgeving waar disciplines samenkomen.</p></article><article><span>03 / TECHNIEK</span><h3>Rotterdam Centraal</h3><p>Techniek die meebeweegt met een gebouw in beweging.</p></article><article><span>04 / ZORG</span><h3>Ikazia Ziekenhuis</h3><p>Zorgvuldige uitvoering voor een omgeving die altijd doorgaat.</p></article></div></section>
+
+    <section class="section contact" id="contact"><div class="section-label">S.04 / CONTACT</div><div class="contact-grid"><div><p class="eyebrow">Klaar om te bouwen?</p><h2>Maak ruimte voor<br><em>de volgende stap.</em></h2><p>Vertel ons over uw project. We denken mee over data, installaties, bouw en de mensen die het waarmaken.</p><div class="contact-details"><a href="tel:+31702629419">070 — 262 94 19</a><a href="mailto:info@redcobv.nl">info@redcobv.nl</a><span>Veraartlaan 8<br>2288 GM Rijswijk</span></div></div><form id="contactForm"><label>Naam<input required name="name" autocomplete="name"></label><label>E-mail<input required type="email" name="email" autocomplete="email"></label><label>Waar kunnen we mee helpen?<textarea required name="message" rows="4"></textarea></label><button class="button button-primary" type="submit">Verstuur bericht <span>↗</span></button><p class="form-note" id="formNote" role="status"></p></form></div></section>
+  </main>
+  <footer><a class="brand" href="#top"><span class="brand-mark">R</span><span>REDCO <i>BV</i></span></a><p>Synergie tussen ideeën en realisatie.</p><p>© 2026 REDCO B.V. · Rijswijk</p></footer>
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+  <script src="app.js"></script>
+</body>
+</html>

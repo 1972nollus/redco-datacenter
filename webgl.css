@@ -1,0 +1,19 @@
+#threeCanvas{position:absolute;inset:20px 0 0;width:100%;height:calc(100% - 20px);z-index:4;pointer-events:none;opacity:0;transition:opacity .8s cubic-bezier(.2,.8,.2,1)}
+.hero{min-height:160vh;align-items:start}
+.hero-copy{position:sticky;top:130px}
+.datacenter-shell{position:sticky;top:105px;height:calc(100vh - 140px);min-height:560px}
+.webgl-ready #threeCanvas{opacity:1}
+.webgl-ready .world .floor,.webgl-ready .world .back-wall,.webgl-ready .world .ceiling,.webgl-ready .world .aisle-line,.webgl-ready .world .cable-run,.webgl-ready .world .data-pulse{opacity:0}
+.webgl-ready #threeCanvas{pointer-events:auto}
+.webgl-ready .world{z-index:0;pointer-events:none}
+.scene-hud{gap:14px;align-items:center}
+#assetStatus{color:var(--cyan);margin-left:auto}
+#assetStatus.is-busy{color:var(--red);animation:assetBlink 1.2s ease-in-out infinite}
+@keyframes assetBlink{50%{opacity:.45}}
+.webgl-ready .rack-body{opacity:0;border:0;box-shadow:none}
+.webgl-ready .rack-label{opacity:0}
+.webgl-ready .rack{transform:translateX(-50%) translateZ(var(--z))}
+.webgl-ready .rack.is-selected{transform:translateX(-50%) translateZ(30px) scale(1.24)}
+@media(prefers-reduced-motion:reduce){#threeCanvas{transition:none}.webgl-ready #threeCanvas{opacity:.8}}
+@media(max-width:1000px){.hero{min-height:125vh}.hero-copy{position:relative;top:auto}.datacenter-shell{position:relative;top:auto;height:610px;min-height:0}}
+@media(max-width:650px){.hero{min-height:900px}.datacenter-shell{height:500px}}
